@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<form action="predict" method="POST">
+    <h1>Iris Flower Classification</h1>
+    <div class="mb-3">
+      <label for="examplePetalLength" class="form-label">Petal Length</label>
+      <input type="text"   name = "plength" id="examplePetalLength" aria-describedby="Petal Length" >
+    </div>
+
+    <div class="mb-3">
+        <label for="examplePetalWidth" class="form-label">Petal  Width :</label>
+        <input type="text"   name = "pwidth" id="examplePetalwidth" aria-describedby="Petal  Width" >
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleSepalLength" class="form-label">Sepal Length</label>
+        <input type="text"   name = "sLength" id="exampleSepalLength" aria-describedby="Sepal Length" >
+      </div>
+    
+      <div class="mb-3">
+        <label for="exampleSepalWidth" class="form-label">Sepal  Width :</label>
+        <input type="text"   name = "swidth" id="exampleSepalwidth" aria-describedby="Sepal  Width" >
+      </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endblock %}
