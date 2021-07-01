@@ -5,7 +5,7 @@ import numpy as np
 model = pickle.load(open("iri.pkl", "rb"))
 
 app = Flask(__name__)
-
+cat = ["Setosa", "Versicolor", "Virginica"]
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -13,12 +13,13 @@ def index():
 
 @app.route("/predict", methods = ["POST"])
 def predict():
+    #
     features=[ x for x in request.form.values()]
     final=[np.array(features)]
     pred = model.predict(final)
     print(features)
-    print(final)
-    return render_template('predict.html', data=pred)
+    final=int(pred)
+    return render_template('predict.html', data=cat[final])
 
 
 
